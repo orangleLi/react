@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不用柯里化实现</title>
+</head>
+<body>
+<div id="test"></div>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/babel">
+    //#region 折叠
+    /**
+     * 高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数
+     *      1. 若A函数，接受的参数是一个函数，那么A就可以称之为高阶函数
+     *      2. 若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数
+     *      常见的高阶函数有：setTimeout Promise arr.map()等
+     * 函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码方式。
+     */
+    //#endregion
+    class Demo extends React.Component {
+        state = {
+            username: '',
+            password: ''
+        }
+        updateFormData = (dataType, e) => {
+            this.setState({[dataType]: e.target.value})
+        }
+
+        handleSubmit = (e) => {
+            e.preventDefault()
+            console.log(this.state.username, this.state.password)
+        }
+        render() {
+            // this.updateFormData  onChange绑定的是updateFormData这个回调函数
+            // this.updateFormData('username')  onChange绑定的是函数的返回值
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={ e => this.updateFormData('username', e) } name="username" placeholder="请输入用户名" />
+                    <input onChange={ e => this.updateFormData('password', e) } name="password" placeholder="请输入密码" />
+                    <button>提交</button>
+                </form>
+            )
+        }
+    }
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+</script>
+</body>
+</html>

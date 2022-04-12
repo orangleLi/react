@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getSnapshotBeforeUpdate的用法</title>
+    <style>
+        .list{
+            background: skyblue;
+            width: 200px;
+            height: 150px;
+            overflow: auto;
+        }
+        .news{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/17.0.2/react.development.js"></script>
+    <script type="text/javascript" src="../js/17.0.2/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        class Life extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {newsArr: []}
+                console.log('constructor')
+            }
+            static getDerivedStateFromProps(props, state) {
+                console.log('getDerivedStateFromProps', props, state)
+                return null
+            }
+            stop = () => {
+                clearInterval(this.timer)
+            }
+            // UNSAFE_componentWillMount() {
+            //     console.log('componentWillMount')
+            // }
+            componentDidMount() {
+                console.log('componentDidMount')
+                this.timer = setInterval(() => {
+                    const { newsArr } = this.state
+                    const news = '新闻' + (newsArr.length + 1)
+                    this.setState({newsArr: [news, ...newsArr]})
+                }, 1000)
+            }
+            getSnapshotBeforeUpdate() {
+                console.log('getSnapshotBeforeUpdate')
+                return this.refs.list.scrollHeight
+            }
+            componentDidUpdate(preProps, preState, height) {
+                console.log('componentDidMount')
+                this.refs.list.scrollTop += this.refs.list.scrollHeight - height
+            }
+            render() {
+                console.log('render')
+                return (
+                    <div>
+                        <div className="list" ref="list">
+                            {
+                                this.state.newsArr.map((item, index) => {
+                                    return <div className="news" key={index}>{item}</div>
+                                })
+                            }
+                        </div>
+                        <button onClick={this.stop}>停止</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Life/>, document.getElementById('test'))
+    </script>
+</body>
+</html>

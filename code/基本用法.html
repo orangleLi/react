@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>基本用法</title>
+	<style>
+		.testCls{
+			color: #777;
+		}
+	</style>
+</head>
+<body>
+	<div id="test"></div>
+	<script type="text/javascript" src="./js/react.development.js"></script>
+	<script type="text/javascript" src="./js/react-dom.development.js"></script>
+	<script type="text/javascript" src="./js/babel.min.js"></script>
+
+	<script type="text/babel">
+		const data = {
+		    title: '通用框架',
+			datas: ['Vue', 'React', 'Angular']
+		}
+		const className = 'testCls'
+		const vDom = (
+			<div>
+                <h1>{data.title}</h1>
+                <ul className={className}>
+					{
+                        data.datas.map((item, index) => {
+                            return <li key={index}>{item}</li>
+                        })
+					}
+				</ul>
+			</div>
+		)
+        ReactDOM.render(vDom, document.getElementById('test'))
+
+        // ReactDOM.render(React.createElement('h2', {id: 'test'}, 'hello react'), document.getElementById('test'))
+	</script>
+</body>
+</html>

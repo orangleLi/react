@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>受控组件</title>
+    <style>
+        .btn{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/babel">
+    /**
+     * 受控组件：输入类的dom变化之后直接将值维护在state中，需要用的时候直接从状态中取值  类似vue双向绑定
+     * 一般用受控组件，因为官网提示尽量少用ref
+     */
+    class Demo extends React.Component {
+        state = {
+            username: '',
+            password: ''
+        }
+        setUsername = (e) => {
+            this.setState({username: e.target.value})
+        }
+        setPassword = (e) => {
+            this.setState({password: e.target.value})
+        }
+        handleSubmit = (e) => {
+            e.preventDefault()
+            console.log(this.state.username, this.state.password)
+        }
+        render() {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={this.setUsername} name="username" placeholder="请输入用户名" />
+                    <input onChange={this.setPassword} name="password" placeholder="请输入密码" />
+                    <button>提交</button>
+                </form>
+            )
+        }
+    }
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+</script>
+</body>
+</html>

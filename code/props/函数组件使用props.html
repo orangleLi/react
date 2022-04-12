@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类式组件</title>
+</head>
+<body>
+    <div id="test"></div>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+    <script type="text/babel">
+        function Person(props) {
+            const {name, sex, age} = props
+            //props是只读的
+            return (
+                <ul>
+                    <li>姓名：{name}</li>
+                    <li>性别：{sex}</li>
+                    <li>年龄：{age + 1}</li>
+                </ul>
+            );
+        }
+
+        //对标签属性进行类型、必要性的限制
+        Person.propTypes = {
+            name: PropTypes.string.isRequired, // 限制name为字符串，且必传
+            sex: PropTypes.string, // 限制sex为字符串
+            age: PropTypes.number, // 限制age为数字
+            speak: PropTypes.func // 限制speak为函数
+        }
+        //指定属性默认值
+        Person.defaultProps = {
+            sex: '男', // sex默认值为男
+            age: 18 // age默认值为18
+        }
+
+        ReactDOM.render(<Person name="zs" sex="男" speak={speak}/>, document.getElementById('test'))
+        ReactDOM.render(<Person name="ls" age={20}/>, document.getElementById('test1'))
+        let data = {name: 'ww', sex: '女', age: 18}
+        ReactDOM.render(<Person {...data}/>, document.getElementById('test2'))
+
+        function speak() {
+            console.log('speak...')
+        }
+    </script>
+</body>
+</html>

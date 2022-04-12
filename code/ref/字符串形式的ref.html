@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串形式的ref</title>
+    <style>
+        .btn{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <script type="text/javascript" src="../js/react-dom.development.js"></script>
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        // 字符串形式的ref 官方建议不要使用，存在性能问题，后续版本会移除此功能  建议使用回调函数形式的ref或createRef API的方式代替
+        class Demo extends React.Component {
+            showData = () => {
+                const {input1} = this.refs
+                console.log(input1.value)
+            }
+            showData1 = () => {
+                const {input2} = this.refs
+                console.log(input2.value)
+            }
+            render() {
+                return (
+                    <div>
+                        <input ref="input1" placeholder="输入左侧数据点击按钮显示" />
+                        <button className="btn" onClick={this.showData}>点击显示左侧数据</button>
+                        <input ref="input2" onBlur={this.showData1} placeholder="输入右侧数据失去焦点显示" />
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Demo/>, document.getElementById('test'))
+    </script>
+</body>
+</html>
