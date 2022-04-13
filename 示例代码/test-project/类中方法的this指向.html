@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类中方法的this指向</title>
+</head>
+<body>
+    <script type="text/javascript">
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+            speak() {
+                // 类中的方法默认开启了局部严格模式
+                console.log(this)
+            }
+        }
+
+        const p1 = new Person('tom', 20)
+        p1.speak() // Person实例对象
+        const x = p1.speak
+        x() // undefined
+    </script>
+</body>
+</html>

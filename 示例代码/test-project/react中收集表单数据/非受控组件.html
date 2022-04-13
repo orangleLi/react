@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>非受控组件</title>
+    <style>
+        .btn{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="test"></div>
+<script type="text/javascript" src="../js/react.development.js"></script>
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<script type="text/babel">
+    class Demo extends React.Component {
+        handleSubmit = (e) => {
+            e.preventDefault()
+            console.log(this.username.value, this.password.value)
+        }
+        render() {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <input ref={c => this.username = c} name="username" placeholder="请输入用户名" />
+                    <input ref={c => this.password = c} name="password" placeholder="请输入密码" />
+                    <button>提交</button>
+                </form>
+            )
+        }
+    }
+    ReactDOM.render(<Demo/>, document.getElementById('test'))
+</script>
+</body>
+</html>

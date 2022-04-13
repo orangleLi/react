@@ -1,0 +1,25 @@
+.main{
+  margin: 15px;
+}
+.footer{
+  margin-top: 15px;
+}
+.state{
+  margin: 0 10px;
+  display: inline-block;
+}
+.xmbt{
+  display: inline-block;
+  min-width: 120px;
+}
+.func-item{
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+.func-item:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.tbmc{
+  display: inline-block;
+  min-width: 200px;
+}
