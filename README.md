@@ -1,7 +1,7 @@
 # react
 
 *前言*
-1. 学习视频
+1. 学习视频 <br>
 [尚硅谷React技术全家桶全套完整版](https://www.bilibili.com/video/BV1wy4y1D7JT) <br>
 [4小时带你快速入门React全家桶【2022最新】](https://www.bilibili.com/video/BV1tY411G7UP)
 
@@ -9,7 +9,6 @@
 [vue-vben-admin](https://github.com/vbenjs/vue-vben-admin/blob/main/README.zh-CN.md)
 
 **目录**
-
 [受控组件与非受控组件](https://github.com/orangleLi/react/blob/main/受控组件与非受控组件.md) <br>
 [生命周期](https://github.com/orangleLi/react/blob/main/生命周期.md) <br>
 [key的作用](https://github.com/orangleLi/react/blob/main/key的作用.md) <br>
@@ -24,7 +23,7 @@
 2. 采用组件化模式、声明式编码，提高开发效率及组件复用率
 3. 在React Native中可以使用React语法进行移动端开发
 4. 使用虚拟DOM+优秀的Diffing算法，尽量减少与真实DOM的交互
-5. DOM Diffing算法，最小化页面重绘
+5. DOM Diffing算法，最小化页面重绘 <br>
 [Vue与React常用语法转换](https://juejin.cn/post/7044311646604361735)
 
 ## state、props、refs
@@ -32,11 +31,11 @@
 ### 组件三大核心属性1：state
 
 state是组件对象最重要的属性，值是对象（可以包含多个key-value的组合） <br>
-组件被称为“状态机”，通过更新组件的state来更新对应的页面显示（重新渲染组件）
+组件被称为“状态机”，通过更新组件的state来更新对应的页面显示（重新渲染组件） <br>
 **强烈注意**
 1. 组件中render方法中的this为组件实例对象
 2. 组件自定义的方法中的this为undefined，如何解决？ <br>
-  a. 强制绑定this，通过函数对象的bind()
+  a. 强制绑定this，通过函数对象的bind() <br>
   b. 箭头函数
 3. 状态数据，不能直接修改或更新。要通过setState({key: value}) setState是合并不是替换
 
