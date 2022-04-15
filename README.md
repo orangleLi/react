@@ -10,13 +10,13 @@
 
 **目录**
 
-[受控组件与非受控组件](https://github.com/orangleLi/react/blob/main/受控组件与非受控组件.md) <br>
-[生命周期](https://github.com/orangleLi/react/blob/main/生命周期.md) <br>
-[key的作用](https://github.com/orangleLi/react/blob/main/key的作用.md) <br>
-[webpack脚手架创建项目](https://github.com/orangleLi/react/blob/main/webpack脚手架创建项目.md) <br>
-[消息订阅-发布机制](https://github.com/orangleLi/react/blob/main/消息订阅-发布机制.md) <br>
-[路由](https://github.com/orangleLi/react/blob/main/路由.md) <br>
-[redux](https://github.com/orangleLi/react/blob/main/redux.md)
+[受控组件与非受控组件](https://github.com/orangleLi/react/blob/main/note/受控组件与非受控组件.md) <br>
+[生命周期](https://github.com/orangleLi/react/blob/main/note/生命周期.md) <br>
+[key的作用](https://github.com/orangleLi/react/blob/main/note/key的作用.md) <br>
+[webpack脚手架创建项目](https://github.com/orangleLi/react/blob/main/note/webpack脚手架创建项目.md) <br>
+[消息订阅-发布机制](https://github.com/orangleLi/react/blob/main/note/消息订阅-发布机制.md) <br>
+[路由](https://github.com/orangleLi/react/blob/main/note/路由.md) <br>
+[redux](https://github.com/orangleLi/react/blob/main/note/redux.md)
 
 ## 介绍
 
