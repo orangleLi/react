@@ -1,4 +1,4 @@
-# 3. Hooks
+# Hooks
 
 ## 1. React Hook/Hooks是什么?
 
