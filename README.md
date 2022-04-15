@@ -18,6 +18,7 @@
 [路由](https://github.com/orangleLi/react/blob/main/note/路由.md) <br>
 [redux](https://github.com/orangleLi/react/blob/main/note/redux.md)<br>
 [hooks](https://github.com/orangleLi/react/blob/main/note/hooks.md)<br>
+[组件通信方式总结](https://github.com/orangleLi/react/blob/main/note/组件通信方式总结.md)<br>
 [react扩展](https://github.com/orangleLi/react/blob/main/note/react扩展.md)
 
 ## 介绍
