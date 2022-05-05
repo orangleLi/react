@@ -6,7 +6,7 @@
 [4小时带你快速入门React全家桶【2022最新】](https://www.bilibili.com/video/BV1tY411G7UP)
 
 2. 框架 <br>
-[vue-vben-admin](https://github.com/vbenjs/vue-vben-admin/blob/main/README.zh-CN.md)
+[ant-design-pro](https://github.com/ant-design/ant-design-pro)
 
 **目录**
 
