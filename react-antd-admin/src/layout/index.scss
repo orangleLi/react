@@ -1,0 +1,8 @@
+.content-wrapper{
+  display: flex;
+  height: calc(100vh - 48px);
+  .content{
+    padding: 15px;
+    width: 100%;
+  }
+}
